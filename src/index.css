@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  background: #0b0a18;
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Quicksand', system-ui, sans-serif;
+}
+
+.font-title { font-family: 'Cormorant Garamond', serif; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes breathe {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+@keyframes stamp {
+  0% { transform: scale(2.2); opacity: 0; }
+  60% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 214, 120, 0.0); }
+  50% { box-shadow: 0 0 40px 6px rgba(255, 214, 120, 0.35); }
+}
+@keyframes shine {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+.anim-stamp { animation: stamp .6s cubic-bezier(.2,1.4,.4,1) both; }
+.anim-glow { animation: glowPulse 2.2s ease-in-out infinite; }
+.text-shine {
+  background: linear-gradient(90deg, #ffe7a8 0%, #fff 25%, #ffd27a 50%, #fff 75%, #ffe7a8 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 4s linear infinite;
+}
+input[type=range] { accent-color: #ffe9b8; }
+
+/* awan lembut di menu */
+@keyframes cloudDrift {
+  from { transform: translateX(-26px); }
+  to { transform: translateX(26px); }
+}
+.cloud { position: absolute; pointer-events: none; animation: cloudDrift 40s ease-in-out infinite alternate; }
+.cloud span {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, rgba(255,255,255,0.95), rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+  filter: blur(3px);
+}
+.title-glow { text-shadow: 0 2px 30px rgba(90, 40, 100, 0.28), 0 0 60px rgba(255, 255, 255, 0.22); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.anim-fade { animation: fadeIn .6s ease-out both; }
+.anim-rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.scroll-soft::-webkit-scrollbar { width: 6px; }
+.scroll-soft::-webkit-scrollbar-thumb { background: rgba(255,255,255,.2); border-radius: 6px; }
+.anim-floaty { animation: floaty 4s ease-in-out infinite; }
+.anim-fadeup { animation: fadeUp .8s ease-out both; }
+.anim-breathe { animation: breathe 2.4s ease-in-out infinite; }

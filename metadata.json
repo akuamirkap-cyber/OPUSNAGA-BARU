@@ -1,0 +1,6 @@
+{
+  "name": "Naga Zen",
+  "description": "Game terbang naga zen dengan lorong gua bawah tanah, langit-langit kubah, dan alam surga.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
